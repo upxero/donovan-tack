@@ -124,19 +124,11 @@
     </div>
     <!-- Section Title End -->
 
-    <div class="bb ze ki xn 2xl:ud-px-0 jb" x-data="{filterTab: 1}">
+    <div class="bb ze ki xn 2xl:ud-px-0 jb" x-data="{filterTab: 2}">
       <!-- Porject Tab -->
       <div
               class="projects-tab _e bb tc uf wf xf cg rg hh rm vk xm si ti fc"
       >
-        <button
-                data-filter="*"
-                @click="filterTab = 1"
-                :class="{ 'gh lk' : filterTab === 1 }"
-                class="project-tab-btn ek rg ml il vi mi"
-        >
-          Alles
-        </button>
         <button
                 data-filter=".ramen-deuren"
                 @click="filterTab = 2"
@@ -152,6 +144,14 @@
                 class="project-tab-btn ek rg ml il vi mi"
         >
           Rolluiken & Zonwering
+        </button>
+        <button
+                data-filter="*"
+                @click="filterTab = 1"
+                :class="{ 'gh lk' : filterTab === 1 }"
+                class="project-tab-btn ek rg ml il vi mi"
+        >
+          Alles
         </button>
       </div>
 
