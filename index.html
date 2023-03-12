@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expert in ramen & deuren | Renovatiewerken Donovan Tack</title>
+    <meta name="description" content="Ontdek onze expertise op het gebied van ramen, deuren, rolluiken, zonwering, glaswerken en automatisatie voor particulieren en bedrijven. Bij Donovan bieden we ook een extra service aan, waaronder slotvervanging en hulp bij noodgevallen wanneer u niet meer binnen kunt komen.">
+  <link rel="icon" href="images/donovan-logo.png"><link href="style.css" rel="stylesheet"></head>
+  <body
+    x-data="{ page: 'home', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }"
+    x-init="
+         darkMode = JSON.parse(localStorage.getItem('darkMode'));
+         $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
+    :class="{'b eh': darkMode === true}"
+  >
+    <!-- ===== Header Start ===== -->
+    <header
+  class="g s r vd ya cj"
+  :class="{ 'hh sm _k dj bl ll' : stickyMenu }"
+  @scroll.window="stickyMenu = (window.pageYOffset > 20) ? true : false"
+>
+  <div class="bb ze ki xn 2xl:ud-px-0 oo wf yf i">
+    <div class="vd to/4 tc wf yf">
+      <a href="index.html">
+        <img class="om" src="images/donovan-logo-light.svg" alt="Logo Light" />
+        <img class="xc nm" src="images/donovan-logo-dark.svg" alt="Logo Dark" />
+      </a>
+
+      <!-- Hamburger Toggle BTN -->
+      <button class="po rc" @click="navigationOpen = !navigationOpen">
+        <span class="rc i pf re pd">
+          <span class="du-block h q vd yc">
+            <span class="rc i r s eh um tg te rd eb ml jl dl" :class="{ 'ue el': !navigationOpen }"></span>
+            <span class="rc i r s eh um tg te rd eb ml jl fl" :class="{ 'ue qr': !navigationOpen }"></span>
+            <span class="rc i r s eh um tg te rd eb ml jl gl" :class="{ 'ue hl': !navigationOpen }"></span>
+          </span>
+          <span class="du-block h q vd yc lf">
+            <span class="rc eh um tg ml jl el h na r ve yc" :class="{ 'sd dl': !navigationOpen }"></span>
+            <span class="rc eh um tg ml jl qr h s pa vd rd" :class="{ 'sd rr': !navigationOpen }"></span>
+          </span>
+        </span>
+      </button>
+      <!-- Hamburger Toggle BTN -->
+    </div>
+
+    <div
+      class="vd wo/4 sd qo f ho oo wf yf"
+      :class="{ 'd hh rm sr td ud qg ug jc yh': navigationOpen }"
+    >
+      <nav>
+        <ul class="tc _o sf yo cg ep">
+          <li><a href="index.html" class="xl" :class="{ 'mk': page === 'home' }">Home</a></li>
+          <li class="c i" x-data="{ dropdown: false }">
+            <a
+              href="#"
+              class="xl tc wf yf bg"
+              @click.prevent="dropdown = !dropdown"
+              :class="{ 'mk': page === 'blog-grid' || page === 'blog-single' || page === 'signin' || page === 'signup' || page === '404' }"
+            >
+              Diensten
+
+              <svg
+              :class="{ 'wh': dropdown }"
+              class="th mm we fd pf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+              </svg>
+            </a>
+
+            <!-- Dropdown Start -->
+            <ul class="a" :class="{ 'tc': dropdown }">
+              <li><a href="service-1.html" class="xl" :class="{ 'mk': page === 'Rolluiken & zonwering' }">Rolluiken & zonwering</a></li>
+              <li><a href="service-2.html" class="xl" :class="{ 'mk': page === 'Glaswerken' }">Glaswerken</a></li>
+              <li><a href="service-3.html" class="xl" :class="{ 'mk': page === 'Ramen & deuren' }">Ramen & deuren</a></li>
+              <li><a href="service-4.html" class="xl" :class="{ 'mk': page === 'Slotenmaker' }">Slotenmaker</a></li>
+              <li><a href="service-5.html" class="xl" :class="{ 'mk': page === 'Automatisatie' }">Automatisatie</a></li>
+              <li><a href="service-6.html" class="xl" :class="{ 'mk': page === 'Hersteldienst (schuif)ramen & deuren' }">Hersteldienst (schuif)ramen & deuren</a></li>
+            </ul>
+            <!-- Dropdown End -->
+          </li>
+          <li><a href="projects.html" class="xl">Realisaties</a></li>
+        </ul>
+      </nav>
+
+      <div class="tc wf ig pb no">
+        <div class="pc h io pa ra" :class="navigationOpen ? '!-ud-visible' : 'd'">
+          <label class="rc ab i">
+            <input type="checkbox" :value="darkMode" @change="darkMode = !darkMode" class="pf vd yc uk h r za ab" />
+            <!-- Icon Sun -->
+            <svg :class="{ 'wn' : page === 'home', 'xh' : page === 'home' && stickyMenu }" class="th om" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12.0908 18.6363C10.3549 18.6363 8.69 17.9467 7.46249 16.7192C6.23497 15.4916 5.54537 13.8268 5.54537 12.0908C5.54537 10.3549 6.23497 8.69 7.46249 7.46249C8.69 6.23497 10.3549 5.54537 12.0908 5.54537C13.8268 5.54537 15.4916 6.23497 16.7192 7.46249C17.9467 8.69 18.6363 10.3549 18.6363 12.0908C18.6363 13.8268 17.9467 15.4916 16.7192 16.7192C15.4916 17.9467 13.8268 18.6363 12.0908 18.6363ZM12.0908 16.4545C13.2481 16.4545 14.358 15.9947 15.1764 15.1764C15.9947 14.358 16.4545 13.2481 16.4545 12.0908C16.4545 10.9335 15.9947 9.8236 15.1764 9.00526C14.358 8.18692 13.2481 7.72718 12.0908 7.72718C10.9335 7.72718 9.8236 8.18692 9.00526 9.00526C8.18692 9.8236 7.72718 10.9335 7.72718 12.0908C7.72718 13.2481 8.18692 14.358 9.00526 15.1764C9.8236 15.9947 10.9335 16.4545 12.0908 16.4545ZM10.9999 0.0908203H13.1817V3.36355H10.9999V0.0908203ZM10.9999 20.8181H13.1817V24.0908H10.9999V20.8181ZM2.83446 4.377L4.377 2.83446L6.69082 5.14828L5.14828 6.69082L2.83446 4.37809V4.377ZM17.4908 19.0334L19.0334 17.4908L21.3472 19.8046L19.8046 21.3472L17.4908 19.0334ZM19.8046 2.83337L21.3472 4.377L19.0334 6.69082L17.4908 5.14828L19.8046 2.83446V2.83337ZM5.14828 17.4908L6.69082 19.0334L4.377 21.3472L2.83446 19.8046L5.14828 17.4908ZM24.0908 10.9999V13.1817H20.8181V10.9999H24.0908ZM3.36355 10.9999V13.1817H0.0908203V10.9999H3.36355Z" fill=""/>
+            </svg>
+            <!-- Icon Sun -->
+            <img class="xc nm" src="images/icon-moon.svg" alt="Moon" />
+          </label>
+        </div>
+
+        <a href="mailto:info@donovan-tack.be" :class="{ 'nk yl' : page === 'home', 'ok' : page === 'home' && stickyMenu }" class="ek pk xl">Mail Ons</a>
+        <a href="#contact" :class="{ 'hh/[0.15]' : page === 'home', 'sh' : page === 'home' && stickyMenu }" class="lk gh dk rg tc wf xf _l gi hi">Contact</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+    <!-- ===== Header End ===== -->
+
+    <main>
+      <!-- ===== Hero Start ===== -->
+      <section class="gj do ir hj sp jr i pg">
+        <!-- Hero Images -->
+        <div class="xc fn zd/2 2xl:ud-w-187.5 bd 2xl:ud-h-171.5 h q r">
+          <img src="images/shape-01.svg" alt="shape" class="xc 2xl:ud-block h t -ud-left-[10%] ua" />
+          <img src="images/shape-02.svg" alt="shape" class="xc 2xl:ud-block h u p va" />
+          <img src="images/shape-03.svg" alt="shape" class="xc 2xl:ud-block h v w va" />
+          <img src="images/shape-04.svg" alt="shape" class="h q r" />
+          <img src="images/hero-dt.png" alt="Woman" class="h q r ua" />
+        </div>
+
+        <!-- Hero Content -->
+        <div class="bb ze ki xn 2xl:ud-px-0">
+          <div class="tc _o">
+            <div class="animate_left jn/2">
+              <h1 class="fk vj zp or kk wm wb">Renovatiewerken <br> Donovan Tack</h1>
+              <p class="fq">
+                Ontdek onze expertise op het gebied van ramen, deuren, rolluiken, zonwering, glaswerken en automatisatie voor particulieren en bedrijven. Bij Renovatiewerken Donovan Tack bieden we ook een extra service aan, waaronder slotvervanging en hulp bij noodgevallen wanneer u niet meer binnen kunt komen.
+              </p>
+
+              <div class="tc tf yo zf mb">
+                <a href="https://renovatiewerkendonovantack.window4u.eu/" target="_blank" class="ek jk lk gh gi hi rg ml il vc _d _l"
+                  >Prijs Berekenen</a
+                >
+
+                <span class="tc sf">
+                  <a href="tel:+32471739026" class="inline-block ek xj kk wm">Planning 📞 (+32) 0471 73 90 26</a>
+                  <a href="tel:+32484122770" class="inline-block ek xj kk wm">Technische service 📞 (+32) 0484 12 27 70</a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ===== Hero End ===== -->
+
+      <!-- ===== Small Features Start ===== -->
+      <section id="features">
+        <div class="bb ze ki yn 2xl:ud-px-12.5">
+          <div class="tc uf zo xf ap zf bp mq">
+            <!-- Small Features Item -->
+            <div class="animate_top kn to/3 tc cg oq">
+              <div class="tc wf xf cf ae cd rg mh">
+                <img src="images/icon-01.svg" alt="Icon" />
+              </div>
+              <div>
+                <h4 class="ek yj go kk wm xb">24/7 Support</h4>
+                <p>Bent u uw sleutel kwijt of is uw slot beschadigd? Wij zijn 24/7 beschikbaar voor hulp.</p>
+              </div>
+            </div>
+
+            <!-- Small Features Item -->
+            <div class="animate_top kn to/3 tc cg oq">
+              <div class="tc wf xf cf ae cd rg nh">
+                <img src="images/icon-03.svg" alt="Icon" />
+              </div>
+              <div>
+                <h4 class="ek yj go kk wm xb">Hersteldienst</h4>
+                <p>Bij beschadigde (schuif)ramen of deuren kunt u op ons vertrouwen voor minutieuze reparaties.</p>
+              </div>
+            </div>
+
+            <!-- Small Features Item -->
+            <div class="animate_top kn to/3 tc cg oq">
+              <div class="tc wf xf cf ae cd rg oh">
+                <img src="images/icon-02.svg" alt="Icon" />
+              </div>
+              <div>
+                <h4 class="ek yj go kk wm xb">Actief in heel Antwerpen</h4>
+                <p>Renovatiewerken Donovan Tack is actief in groot Antwerpen.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ===== Small Features End ===== -->
+
+      <!-- ===== About Start ===== -->
+      <section class="ji gp uq 2xl:ud-py-35 pg">
+        <div class="bb ze ki xn wq">
+          <div class="tc wf gg qq">
+            <!-- About Images -->
+            <div class="animate_left xc gn gg jn/2 i">
+              <div>
+                <img src="images/shape-05.svg" alt="Shape" class="h -ud-left-5 x" />
+                <img src="images/about-1.jpg" alt="About" class="ib" />
+                <img src="images/about-2.jpg" alt="About" />
+              </div>
+              <div>
+                <img src="images/shape-06.svg" alt="Shape" />
+                <img src="images/about-3.jpg" alt="About" class="ob gb" />
+                <img src="images/shape-07.svg" alt="Shape" class="bb" />
+              </div>
+            </div>
+
+            <!-- About Content -->
+            <div class="animate_right jn/2">
+              <h4 class="ek yj mk gb">Expert in ramen & deuren</h4>
+              <h2 class="fk vj zp pr kk wm qb">Onze specialisatie ligt in het plaatsen van ramen en deuren</h2>
+              <p class="uo">Wilt u nieuwe ramen en deuren laten installeren, of uw bestaande constructies uitbreiden met rolluiken en zonwering? Donovan Tack uit Brecht staat graag voor u klaar.<br><br>
+                Als zaakvoerder met jarenlange ervaring in het vak, weet Donovan Tack precies hoe hij uw woning of bedrijfsgebouw kan opfrissen en beveiligen.</p>
+
+              <!-- <a href="https://www.youtube.com/watch?v=xcJtL7QggTI" data-fslightbox class="vc wf hg mb">
+                <span class="tc wf xf be dd rg i gh ua">
+                  <span class="nf h vc yc vd rg gh qk -ud-z-1"></span>
+                  <img src="images/icon-play.svg" alt="Play" />
+                </span>
+                <span class="kk">SEE HOW WE WORK</span>
+              </a> -->
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ===== About End ===== -->
+
+      <!-- ===== Services Start ===== -->
+      <section id="service" class="lj tp kr">
+        <!-- Section Title Start -->
+        <div
+          x-data="{ sectionTitle: `Dienstenaanbod`, sectionTitleText: `Donovan zorgt ervoor dat elke opdracht tot in de puntjes wordt afgewerkt. Bekijk hieronder hoe hij u van dienst kan zijn.`}"
+        >
+          <div class="animate_top bb ze rj ki xn vq">
+    <h2
+            x-text="sectionTitle"
+            class="fk vj pr kk wm on/5 gq/2 bb _b"
+    >
+    </h2>
+    <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
+</div>
+
+
+        </div>
+        <!-- Section Title End -->
+
+        <div class="bb ze ki xn yq mb en">
+          <div class="wc qf pn xo ng">
+            <!-- Service Item -->
+            <div class="animate_top sg oi pi zq ml il am cn _m">
+              <img src="images/project-z5.jpg" alt="Icon" />
+              <h4 class="ek zj kk wm nb _b">Rolluiken & zonwering</h4>
+              <p>U heeft de keuze uit een breed scala aan opties, zoals isolerende rolluiken of verduisterende zonwering. De mogelijkheden zijn eindeloos!</p><br>
+              <span class="tc sf">
+                <a href="service-1.html" class="inline-block ek xj kk wm">Meer info -></a>
+              </span>
+            </div>
+
+            <!-- Service Item -->
+            <div class="animate_top sg oi pi zq ml il am cn _m">
+              <img src="images/project-g1.jpg" alt="Icon" />
+              <h4 class="ek zj kk wm nb _b">Glaswerken</h4>
+              <p>Heeft u barsten in uw ramen of deuren, of breuken in uw lichtkoepels? Geen zorgen, Donovan Tack weet raad met elke glasbreuk.</p><br>
+              <span class="tc sf">
+                <a href="service-2.html" class="inline-block ek xj kk wm">Meer info -></a>
+              </span>
+            </div>
+
+            <!-- Service Item -->
+            <div class="animate_top sg oi pi zq ml il am cn _m">
+              <img src="images/project-d5.jpg" alt="Icon" />
+              <h4 class="ek zj kk wm nb _b">Ramen & deuren</h4>
+              <p>Donovan installeert een breed scala aan ramen en deuren, waaronder traditionele draai- en kiepramen, innovatieve PADK-modellen en stevige deuren.</p><br>
+              <span class="tc sf">
+                <a href="service-3.html" class="inline-block ek xj kk wm">Meer info -></a>
+              </span>
+            </div>
+
+            <!-- Service Item -->
+            <div class="animate_top sg oi pi zq ml il am cn _m">
+              <img src="images/project-s1.jpg" alt="Icon" />
+              <h4 class="ek zj kk wm nb _b">Slotenmaker</h4>
+              <p>Als u uw sleutel kwijt bent of als het slot van uw woning beschadigd is, kunt u Donovan 24/7 inschakelen voor hulp.</p><br>
+              <span class="tc sf">
+                <a href="service-4.html" class="inline-block ek xj kk wm">Meer info -></a>
+              </span>
+            </div>
+
+            <!-- Service Item -->
+            <div class="animate_top sg oi pi zq ml il am cn _m">
+              <img src="images/project-a1.jpg" alt="Icon" />
+              <h4 class="ek zj kk wm nb _b">Automatisatie</h4>
+              <p>Met Donovans automatisatieopties wordt het openen en sluiten van uw rolluiken of zonwering kinderspel.</p><br>
+              <span class="tc sf">
+                <a href="service-5.html" class="inline-block ek xj kk wm">Meer info -></a>
+              </span>
+            </div>
+
+            <!-- Service Item -->
+            <div class="animate_top sg oi pi zq ml il am cn _m">
+              <img src="images/project-h1.jpg" alt="Icon" />
+              <h4 class="ek zj kk wm nb _b">Hersteldienst (schuif)ramen & deuren</h4>
+              <p>Donovan herstelt (schuif)ramen en deuren met de nodige expertise en heeft diverse vervangonderdelen direct beschikbaar.</p><br>
+              <span class="tc sf">
+                <a href="service-6.html" class="inline-block ek xj kk wm">Meer info -></a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ===== Services End ===== -->
+
+      <!-- ===== Counter Start ===== -->
+      <section class="i pg qh rm ji hp">
+        <img src="images/shape-11.svg" alt="Shape" class="of h ga ha ke" />
+        <img src="images/shape-07.svg" alt="Shape" class="h ia o ae jf" />
+        <img src="images/shape-14.svg" alt="Shape" class="h ja ka" />
+        <img src="images/shape-15.svg" alt="Shape" class="h q p" />
+
+        <div class="bb ze i va ki xn br">
+          <div class="tc uf sn tn xf un gg">
+            <div class="animate_top me/5 ln rj">
+              <h2 class="gk vj zp or kk wm hc">100%</h2>
+              <p class="ek bk aq">Vakmanschap</p>
+            </div>
+            <div class="animate_top me/5 ln rj">
+              <h2 class="gk vj zp or kk wm hc">100%</h2>
+              <p class="ek bk aq">Kwaliteit</p>
+            </div>
+            <div class="animate_top me/5 ln rj">
+              <h2 class="gk vj zp or kk wm hc">100%</h2>
+              <p class="ek bk aq">Tevredenheid van onze klanten</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ===== Counter End ===== -->
+
+      <!-- ===== Clients Start ===== -->
+      <section class="pj vp mr">
+        <!-- Section Title Start -->
+        <div
+          x-data="{ sectionTitle: `Vertrouw op onze kwaliteitsmerken voor een duurzaam resultaat`, sectionTitleText: `Renovatiewerken Donovan Tack werkt samen met gerenommeerde kwaliteitsmerken zoals Verano, Somfy, Kömmerling, Aliplast, Window4U en Kochs, om ervoor te zorgen dat uw renovatieproject een duurzaam resultaat oplevert.`}"
+        >
+          <div class="animate_top bb ze rj ki xn vq">
+    <h2
+            x-text="sectionTitle"
+            class="fk vj pr kk wm on/5 gq/2 bb _b"
+    >
+    </h2>
+    <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
+</div>
+
+
+        </div>
+        <!-- Section Title End -->
+
+        <div class="bb ze ah ch pm hj xp ki xn 2xl:ud-px-49 bc">
+          <div class="wc rf qn zf cp kq xf wf">
+            <a href="#" class="rc animate_top">
+              <img class="th wl ml il zl om" src="images/pr-verano-light.png" alt="Clients" />
+              <img class="xc sk ml il zl nm" src="images/pr-verano-dark.png" alt="Clients" />
+            </a>
+            <a href="#" class="rc animate_top">
+              <img class="tk ml il zl om" src="images/pr-kommerling-light.png" alt="Clients" />
+              <img class="xc sk ml il zl nm" src="images/pr-kommerling-light.png" alt="Clients" />
+            </a>
+            <a href="#" class="rc animate_top">
+              <img class="tk ml il zl om" src="images/pr-kochs-light.png" alt="Clients" />
+              <img class="xc sk ml il zl nm" src="images/pr-kochs-light.png" alt="Clients" />
+            </a>
+            <a href="#" class="rc animate_top">
+              <img class="tk ml il zl om" src="images/pr-somfy-light.png" alt="Clients" />
+              <img class="xc sk ml il zl nm" src="images/pr-somfy-light.png" alt="Clients" />
+            </a>
+            <a href="#" class="rc animate_top">
+              <img class="tk ml il zl om" src="images/pr-aliplast-light.png" alt="Clients" />
+              <img class="xc sk ml il zl nm" src="images/pr-aliplast-light.png" alt="Clients" />
+            </a>
+            <a href="#" class="rc animate_top">
+              <img class="tk ml il zl om" src="images/pr-window-light.png" alt="Clients" />
+              <img class="xc sk ml il zl nm" src="images/pr-window-light.png" alt="Clients" />
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- ===== Clients End ===== -->
+
+      <!-- ===== Contact Start ===== -->
+      <section id="contact" class="i pg fh rm ji gp uq">
+        <!-- Bg Shapes -->
+        <img src="images/shape-06.svg" alt="Shape" class="h aa y" />
+        <img src="images/shape-03.svg" alt="Shape" class="h ca u" />
+        <img src="images/shape-07.svg" alt="Shape" class="h w da ee" />
+        <img src="images/shape-12.svg" alt="Shape" class="h p s" />
+        <img src="images/shape-13.svg" alt="Shape" class="h r q" />
+
+        <!-- Section Title Start -->
+        <div
+                x-data="{ sectionTitle: `Contacteer Ons`, sectionTitleText: `Wilt u meer informatie over ons dienstenaanbod of een offerte aanvragen? Neem dan contact op met Donovan via de onderstaande gegevens of via het contactformulier.`}"
+        >
+          <div class="animate_top bb ze rj ki xn vq">
+            <h2
+                    x-text="sectionTitle"
+                    class="fk vj pr kk wm on/5 gq/2 bb _b"
+            >
+            </h2>
+            <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
+          </div>
+
+
+        </div>
+        <!-- Section Title End -->
+
+        <div class="i va bb ye ki xn wq jb mo">
+          <div class="tc uf sn tf rn un zf xl:gap-10">
+            <div class="animate_top w-full mn/5 to/3 vk sg hh sm yh rq i pg">
+              <!-- Bg Shapes -->
+              <img src="images/shape-03.svg" alt="Shape" class="h la x wd" />
+              <img src="images/shape-06.svg" alt="Shape" class="h la ma ne kf" />
+
+              <div class="fb">
+                <h4 class="wj kk wm cc">Adres</h4>
+                <p><a href="https://goo.gl/maps/TNPEZEjR57NifMct6" target="_blank">Brasschaatbaan 5, 2960 Brecht, België</a></p>
+              </div>
+              <div class="fb">
+                <h4 class="wj kk wm cc">Telefoon (Planning)</h4>
+                <p><a href="tel:+32471739026">(+32) 0471 73 90 26</a></p>
+              </div>
+              <div class="fb">
+                <h4 class="wj kk wm cc">Telefoon (Technische dienst)</h4>
+                <p><a href="tel:+32484122770">(+32) 0484 12 27 70</a></p>
+              </div>
+              <div class="fb">
+                <h4 class="wj kk wm cc">E-mailadres</h4>
+                <p><a href="mailto:info@donovan-tack.be">info@donovan-tack.be</a></p>
+              </div>
+              <div class="fb">
+                <h4 class="wj kk wm cc">BTW-nummer</h4>
+                <p>BE 0652.977.076</p>
+              </div>
+
+              <span class="rc nd rh tm lc fb"></span>
+
+              <div>
+                <h4 class="wj kk wm qb">Volg ons op Facebook</h4>
+                <ul class="tc wf fg">
+                  <li>
+                    <a href="https://www.facebook.com/RenovatiewerkenDonovanTack" target="_blank" class="c tc wf xf ie ld rg ml il tl">
+                      <svg class="th lm ml il" width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                                d="M6.83366 11.3752H9.12533L10.042 7.7085H6.83366V5.87516C6.83366 4.931 6.83366 4.04183 8.667 4.04183H10.042V0.96183C9.74316 0.922413 8.61475 0.833496 7.42308 0.833496C4.93433 0.833496 3.16699 2.35241 3.16699 5.14183V7.7085H0.416992V11.3752H3.16699V19.1668H6.83366V11.3752Z"
+                                fill=""
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="animate_top w-full nn/5 vo/3 vk sg hh sm yh tq">
+              <form action="https://formbold.com/s/3K7Zl" method="POST">
+                <div class="tc sf yo ap zf ep qb">
+                  <div class="vd to/2">
+                    <label class="rc ac" for="fullname">Voor-en achternaam</label>
+                    <input
+                            type="text"
+                            name="fullname"
+                            id="fullname"
+                            placeholder="Donovan Tack"
+                            class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 xi mi"
+                            required=""
+                    />
+                  </div>
+
+                  <div class="vd to/2">
+                    <label class="rc ac" for="email">E-mailadres</label>
+                    <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            placeholder="voorbeeld@gmail.com"
+                            class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 xi mi"
+                            required=""
+                    />
+                  </div>
+                </div>
+
+                <div class="tc sf yo ap zf ep qb">
+                  <div class="vd to/2">
+                    <label class="rc ac" for="phone">Telefoonnummer</label>
+                    <input
+                            type="text"
+                            name="phone"
+                            id="phone"
+                            placeholder="(+32) 0433423432"
+                            class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 xi mi"
+                            required=""
+                    />
+                  </div>
+
+                  <div class="vd to/2">
+                    <label class="rc ac" for="subject">Onderwerp</label>
+                    <input
+                            type="text"
+                            for="subject"
+                            id="subject"
+                            placeholder="Typ uw onderwerp"
+                            class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 xi mi"
+                            required=""
+                    />
+                  </div>
+                </div>
+
+                <div class="fb">
+                  <label class="rc ac" for="message">Bericht</label>
+                  <textarea
+                          placeholder="Schrijf uw bericht"
+                          rows="4"
+                          name="message"
+                          id="message"
+                          class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 ci"
+                          required=""
+                  ></textarea>
+                </div>
+
+                <div class="tc xf">
+                  <button class="vc rg lk gh ml il hi gi _l">Verstuur Bericht</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ===== Contact End ===== -->
+
+      <!-- ===== CTA Start ===== -->
+      <section class="i pg gh ji">
+  <!-- Bg Shape -->
+  <img class="h p q" src="images/shape-16.svg" alt="Bg Shape" />
+
+  <div class="bb ye i z-10 ki xn dr">
+    <div class="tc uf sn tn un gg">
+      <div class="animate_left to/2">
+        <h2 class="fk vj zp pr lk ac">
+          Heeft u interesse in het op maat laten installeren van ramen en deuren?
+        </h2>
+        <p class="lk">
+          Aarzel dan niet om een vrijblijvende offerte aan te vragen!
+        </p>
+      </div>
+      <div class="animate_right bf">
+        <a href="mailto:info@donovan-tack.be" class="vc ek kk hh rg ol il cm gi hi">
+            Offerte Aanvragen
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <!-- ===== CTA End ===== -->
+    </main>
+    <!-- ===== Footer Start ===== -->
+    <footer>
+  <div class="bb ze ki xn 2xl:ud-px-0">
+    <!-- Footer Top -->
+    <div class="ji gp">
+      <div class="tc uf ap gg fp">
+        <div class="animate_top zd/2 to/4">
+          <a href="index.html">
+            <img src="images/donovan-logo-light.svg" alt="Logo" class="om" />
+            <img src="images/donovan-logo-dark.svg" alt="Logo" class="xc nm" />
+          </a>
+
+          <p class="lc fb">Renovatiewerken Donovan Tack is uw expert in rolluiken, zonwering, glaswerken, ramen, deuren en automatisatie.</p>
+
+          <ul class="tc wf cg">
+            <li>
+              <a href="https://www.facebook.com/RenovatiewerkenDonovanTack" target="_blank">
+                <svg class="vh ul cl il" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_48_1499)">
+                    <path d="M14 13.5H16.5L17.5 9.5H14V7.5C14 6.47 14 5.5 16 5.5H17.5V2.14C17.174 2.097 15.943 2 14.643 2C11.928 2 10 3.657 10 6.7V9.5H7V13.5H10V22H14V13.5Z" fill="" />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_48_1499">
+                      <rect width="24" height="24" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="vd ro tc sf rn un gg vn">
+          <div class="animate_top">
+            <h4 class="kk wm tj ec">Snelle Links</h4>
+
+            <ul>
+              <li><a href="#" class="sc xl vb">Home</a></li>
+              <li><a href="#service" class="sc xl vb">Diensten</a></li>
+              <li><a href="projects.html" class="sc xl vb">Realisaties</a></li>
+              <li><a href="mailto:info@donovan-tack.be" class="sc xl vb">Offerte Aanvragen</a></li>
+              <li><a href="https://renovatiewerkendonovantack.window4u.eu/" target="_blank" class="sc xl vb">Prijs Berekenen</a></li>
+            </ul>
+          </div>
+
+          <div class="animate_top">
+            <h4 class="kk wm tj ec">Diensten</h4>
+
+            <ul>
+              <li><a href="service-1.html" class="sc xl vb">Rolluiken & zonwering</a></li>
+              <li><a href="service-2.html" class="sc xl vb">Glaswerken</a></li>
+              <li><a href="service-3.html" class="sc xl vb">Ramen & deuren</a></li>
+              <li><a href="service-4.html" class="sc xl vb">Slotenmaker<span class="sc ek uj lk nh rg zi _i nc">24/7</span></a></li>
+              <li><a href="service-5.html" class="sc xl vb">Automatisatie</a></li>
+              <li><a href="service-6.html" class="sc xl vb">Hersteldienst ramen & deuren</a></li>
+            </ul>
+          </div>
+
+          <div class="animate_top">
+            <h4 class="kk wm tj ec">Contact</h4>
+
+            <ul>
+              <li><a href="https://goo.gl/maps/TNPEZEjR57NifMct6" target="_blank" class="sc xl vb">📍 Adres</a></li>
+              <li><a href="tel:+32471739026" class="sc xl vb">📞 Planning</a></li>
+              <li><a href="tel:+32484122770" class="sc xl vb">📞 Technische Dienst</a></li>
+              <li><a href="mailto:info@donovan-tack.be" class="sc xl vb">📧 Mail Ons</a></li>
+            </ul>
+          </div>
+
+          <div class="animate_top">
+            <h4 class="kk wm tj ec">Partners</h4>
+            <ul>
+              <li><a href="https://verano.be/" target="_blank" class="sc xl vb">Verano</a></li>
+              <li><a href="https://www.somfy.be/nl-be/" target="_blank" class="sc xl vb">Somfy</a></li>
+              <li><a href="https://www.kommerling.be/" target="_blank" class="sc xl vb">Kömmerling</a></li>
+              <li><a href="https://window4u.eu/" target="_blank" class="sc xl vb">Window4U</a></li>
+              <li><a href="https://www.aliplast.be/" target="_blank" class="sc xl vb">Aliplast</a></li>
+              <li><a href="https://www.kochs.nl/" target="_blank" class="sc xl vb">Kochs</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer Top -->
+
+    <!-- Footer Bottom -->
+    <div class="bh ch pm tc uf sf yo wf xf ap cg fp bj">
+      <div class="animate_top">
+        <p>&copy; 2023 Donovan Tack</p>
+        <p>Designed by <a href="https://upxero.com" target="_blank">Upxero</a></p>
+      </div>
+
+      <div class="animate_top">
+        <ul class="tc wf gg">
+          <li><a href="#" class="xl">Support</a></li>
+          <li><a href="#" class="xl">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- Footer Bottom -->
+  </div>
+</footer>
+
+    <!-- ===== Footer End ===== -->
+
+    <!-- ====== Back To Top Start ===== -->
+    <button
+  class="xc wf xf ie ld vg sr gh tr g sa ta _a"
+  @click="window.scrollTo({top: 0, behavior: 'smooth'})"
+  @scroll.window="scrollTop = (window.pageYOffset > 50) ? true : false"
+  :class="{ 'uc' : scrollTop }"
+>
+  <svg class="uh se qd" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+    <path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z" />
+  </svg>
+</button>
+
+    <!-- ====== Back To Top End ===== -->
+
+    <script>
+      //  Pricing Table
+      const setup = () => {
+        return {
+          isNavOpen: false,
+
+          billPlan: 'monthly',
+
+          plans: [
+            {
+              name: 'Starter',
+              price: {
+                monthly: 29,
+                annually: 29 * 12 - 199,
+              },
+              features: ['400 GB Storaget', 'Unlimited Photos & Videos', 'Exclusive Support'],
+            },
+            {
+              name: 'Growth Plan',
+              price: {
+                monthly: 59,
+                annually: 59 * 12 - 100,
+              },
+              features: ['400 GB Storaget', 'Unlimited Photos & Videos', 'Exclusive Support'],
+            },
+            {
+              name: 'Business',
+              price: {
+                monthly: 139,
+                annually: 139 * 12 - 100,
+              },
+              features: ['400 GB Storaget', 'Unlimited Photos & Videos', 'Exclusive Support'],
+            },
+          ],
+        };
+      };
+    </script>
+  <script defer src="bundle.js"></script></body>
+</html>
